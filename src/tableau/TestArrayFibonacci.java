@@ -14,14 +14,50 @@ public class TestArrayFibonacci {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-
+		Scanner sc = new Scanner(System.in);	
+		
+		// plus court que l'autre méthode cf, après
+		
 		System.out.println("Entrez une valeur");
-		int rang = sc.nextInt();
-		int[] tab = new int[rang];
-
-		for (int i = 0; i < tab.length; i++) {
-
+		int rangN = sc.nextInt();
+		
+		if (rangN<2) {
+			rangN = 2;
 		}
+		
+		int[] suite = new int[rangN];
+		suite[0] = 0;
+		suite[1] = 1;
+		
+		for (int i = 2; i < suite.length; i++) {
+		
+		suite[i] = suite[i - 1] + suite[i - 2];
+		
+		}
+		
+		for(int i = 0; i < suite.length; i++) {
+			System.out.print(suite[i] + " ");
+		}
+		
+		//une façon de faire...avec un code un peu long mais avec une seule boucle
+		
+	/* System.out.println("Entrez une valeur");
+		int rangN = sc.nextInt();
+		int[] suite = new int[rangN];
+
+		for (int i = 0; i < suite.length; i++) {
+
+			if (i == 0) {
+				suite[i] = 0;
+			} else if (i == 1) {
+				suite[i] = 1;
+
+			} else {
+				suite[i] = suite[i - 1] + suite[i - 2];
+			}
+			
+			System.out.print(suite[i] + " ");
+		}*/
+
 	}
 }
